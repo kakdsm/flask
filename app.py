@@ -1,5 +1,7 @@
 from flask import Flask, request, jsonify
+from job_recommender import JobRecommenderSystem
 import joblib
+
 import pandas as pd
 import numpy as np
 
