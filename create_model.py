@@ -63,12 +63,10 @@ accuracy = accuracy_score(y_test, y_pred)
 print(f"📊 Model Accuracy: {accuracy*100:.1f}%")
 
 # Create and save system
-recommender_system = JobRecommenderSystem(model)
-joblib.dump(recommender_system, "job_recommender_system.pkl")
+joblib.dump(model, "job_recommender_system.pkl")
+
 print("💾 Complete system saved as job_recommender_system.pkl")
 
 # Quick test
 print("\n🎯 QUICK TEST:")
 sample_skills = [4, 3, 2, 3, 4, 4, 3, 2, 3, 3, 4, 4, 3, 4, 4]
-print("Top jobs:", recommender_system.get_top_5_jobs(sample_skills))
-print("Soft traits:", recommender_system.get_5_soft_traits(sample_skills))

@@ -109,7 +109,9 @@ def home():
 
 # Load the model
 try:
-    system = joblib.load("job_recommender_system.pkl")
+    model = joblib.load("job_recommender_system.pkl")
+    system = JobRecommenderSystem(model)
+
     print("Model loaded successfully!")
 except FileNotFoundError:
     print("Error: job_recommender_system.pkl not found.")
